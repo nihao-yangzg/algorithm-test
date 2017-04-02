@@ -1,6 +1,10 @@
 package main
 import "fmt"
 
+/**
+ * 一个数额能由一组面值不同的硬币相加表示的数量.
+ **/
+  
 func find_num(coins []int, size int, amount int) int{
     var result [][]int
     for i:=0; i<size + 1; i++ {
@@ -13,6 +17,8 @@ func find_num(coins []int, size int, amount int) int{
     for i:=0; i<size + 1; i++ {
         result[i][0] = 1
     }
+    //动态规划过程
+    //result[i][j] -->前i中币值表示 数额为j的总数。
 
 
     for i:=1; i<size + 1; i++ {
