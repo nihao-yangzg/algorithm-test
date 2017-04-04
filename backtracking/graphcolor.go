@@ -11,6 +11,7 @@ import (
 func color(cur int) int {
     var num = 0
     if cur == len(graph) {
+        fmt.Println(result)
         return 1
     }
     for i := 0; i < len(colors); i++ {
@@ -41,7 +42,7 @@ var graph = [][]int{
         {0,0,1,0,0,0},
     }
 
-var colors = []int{1,2,3,4,5}
+var colors = []int{1,2,3}
 var result = []int{0,0,0,0,0,0}
 func main(){
     num := color(0)
