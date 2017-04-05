@@ -56,17 +56,10 @@ func maze_path(start []int){
         }
        
         if ok {
-            pre[0] = x
-            pre[1] = y
-            // fmt.Println(start)
-            // fmt.Println(the_maze[8][3])
-            // fmt.Println(pre)
             the_maze[x][y] = 0
             maze_path(start)
         }
         if found {
-            // i  := start[0]
-            // j := start[1]
             result = append(result, []int{x,y})
             break
         }
@@ -90,7 +83,6 @@ var in = []int {8,3}
 var out = []int {3,0}
 var result [][]int
 var found = false
-var pre = []int{0,0}
 func main(){
     maze_path(in)
     for i := len(result) - 1; i > 0; i-- {
