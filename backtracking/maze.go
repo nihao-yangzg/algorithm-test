@@ -18,27 +18,27 @@ func maze_path(start []int){
     }
     for k := 0; k < 4; k++ {
         ok := false
+        //判断是否超出边界
         if x-1 < 0 || x + 1 >= length || y - 1 < 0 || y + 1 >= length {
             continue
         }
 
-
         switch k {
-            case 0:
+            case 0: //上移
                 if the_maze[x-1][y] != 0 {
                     start[0] = x-1
                     start[1] = y
                     ok = true
                 }
                 break
-            case 1:
+            case 1: //右移
                 if the_maze[x][y+1] != 0 {
                     start[0] = x
                     start[1] = y+1
                     ok = true
                 }
                 break
-            case 2:
+            case 2: //下移
                 if the_maze[x+1][y] != 0 {
                     start[0] = x+1
                     start[1] = y
@@ -46,7 +46,7 @@ func maze_path(start []int){
                     
                 }
                 break
-            case 3:
+            case 3: //左移
                 if the_maze[x][y-1] != 0 {
                     start[0] = x
                     start[1] = y-1
@@ -56,10 +56,13 @@ func maze_path(start []int){
         }
        
         if ok {
+            //访问过的元素置0，防止重复访问
             the_maze[x][y] = 0
+
             maze_path(start)
         }
         if found {
+            //保存路径结果
             result = append(result, []int{x,y})
             break
         }
