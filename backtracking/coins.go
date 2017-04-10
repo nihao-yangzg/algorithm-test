@@ -22,6 +22,7 @@ func find(subrst []int, summary int, index int){
         } else {
             find(subrst, sum, i)
         }
+        //开辟新的空间，并将原来的元素拷贝进入新空间，最后一个元素忽略
         temp := []int{}
         for j := 0; j < len(subrst) - 1; j++ {
             temp = append(temp, subrst[j])
