@@ -3,7 +3,9 @@ package main
 import (
     "fmt"
 )
-
+/**
+ * 将GBGB...GGBB调整顺序,调整后的顺序为GGG...BB或BB...GG,求调整次数最少为多少
+ */
 func adapter(queue string) int {
     var strlen = len(queue)
     var result = make([][2]int, strlen)
